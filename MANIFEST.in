@@ -1,0 +1,6 @@
+include setup.py
+include MANIFEST.in
+include readme.rst
+
+recursive-include test
+recursive-include src
