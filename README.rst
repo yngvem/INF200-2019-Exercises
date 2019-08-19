@@ -7,7 +7,9 @@ FIRST_NAME SURNAME:
 **Exersice 0:**
 
 Before we start the exersices, you must prepare the exersice repository.
-There are a number of files you should modify to do this.
+There are a number of files you should modify to do this. Do this in a
+separate branch, named ``ex00`` and submit a Pull request to merge with
+``master``.
 
  * Fill in the setup.py file (i.e. replace FIRSTNAME with your first name,
    SURNAME with your surname, and your@email.no with your email adress)
