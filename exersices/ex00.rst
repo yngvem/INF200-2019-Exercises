@@ -8,11 +8,10 @@ separate branch, named ``ex00`` and submit a Pull request to merge with
 
  * Fill in the ``readme.rst`` file (i.e. replace FIRSTNAME with your first name
    and SURNAME with your surname)
- * Fill in the ``setup.py`` file (i.e. replace FIRSTNAME with your first name,
-   SURNAME with your surname, and your@email.no with your email adress)
  * Fill in the ``setup.cfg`` file (i.e. replace FIRSTNAME with your first name,
    SURNAME with your surname, and your@email.no with your email adress)
- * Change the name of the ``YOUR_NAME_ex`` folder
+ * Change the name of the ``YOUR_NAME_ex`` folder to be the same as the name
+   you set for your project in setup.cfg
 
    * Example: "yngve_moe_ex"
    * Note that there are no capital letters here.
