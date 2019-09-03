@@ -13,6 +13,7 @@ separate branch, named ``ex00`` and submit a Pull request to merge with
  * Fill in the ``setup.cfg`` file (i.e. replace FIRSTNAME with your first name,
    SURNAME with your surname, and your@email.no with your email adress)
  * Change the name of the ``YOUR_NAME_ex`` folder
+
    * Example: "yngve_moe_ex"
    * Note that there are no capital letters here.
 
