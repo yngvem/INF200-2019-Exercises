@@ -1,0 +1,181 @@
+Exercise 2
+----------
+
+-  Deadline: **Friday 26th September, 14.00**
+-  All hand-ins in form of pull request on GitHub
+-  Make sure you use the correct repository, branch, project and file
+   names!
+-  Check that your code passes the “quality control” in PyCharm!
+
+
+Task A
+~~~~~~
+
+Create file ``file_stats.py`` and paste the following code into it:
+
+.. code:: python
+
+   def char_counts(textfilename):
+       pass
+
+   if __name__ == '__main__':
+
+       filename = 'file_stats.py'
+       frequencies = char_counts(filename)
+       for code in range(256):
+           if frequencies[code] > 0:
+               character = ''
+               if code >= 32:
+                   character = chr(code)
+               
+               print(
+                   '{:3}{:>4}{:6}'.format(
+                       code, character, frequencies[code]
+                   )
+               )
+
+Then write code for the ``char_counts()`` function that opens the file
+with the given ``filename`` using encoding ``utf-8`` and reads the
+entire file content into a single string. It shall then count how often
+each character code (0–255) occurs in the string and return the result
+as a list or tuple, where ``result[i]`` gives the number of occurances
+of charactor code ``i``.
+
+Notes
+^^^^^
+
+-  ``ord(c)`` returns the numerical value (0–255) representing the
+   character value, while ``chr(i)`` returns the character represented
+   by numerical value ``i``.
+-  This code will work correctly for files containing English
+   characters, as well as most western European characters (all those
+   that have a UTF-8 code less than 256).
+-  It will not work for, e.g., ‘サイトマップ’ (japansk “saitomappo”,
+   i.e., “site map”), since in this case the UTF-8 character codes are
+   larger than 256:
+
+.. code:: ipython3
+
+    [ord(kana) for kana in 'サイトマップ']
+
+
+
+
+.. parsed-literal::
+
+    [12469, 12452, 12488, 12510, 12483, 12503]
+
+
+
+Task B
+~~~~~~
+
+Information theory defines an entropy for messages (texts). Essentially,
+the entropy describes how difficult it is to guess individual letters in
+a message (see
+`Wikipedia <http://en.wikipedia.org/wiki/Entropy_%28information_theory%29>`__),
+or equivalently, how much information a message carries per letter.
+
+-  :math:`N`: number of letters in message
+-  :math:`n_i`: number of occurences of letter :math:`i` (:math:`i` is
+   the UTF-8 code for the letter)
+-  :math:`p_i = n_i/N`: frequency of the letter in the message
+
+Entropy is then defined as
+
+.. math::
+
+
+       H = - \sum_i p_i \log_2 p_i
+
+-  Since :math:`\lim_{p\to 0+} p \log p = 0`, we define
+   :math:`p\log p=0`, i.e., we drop all terms in the sum for which
+   :math:`p_i=0`.
+-  Since we use the logarithm to base 2, the resulting entropy is
+   measured in bits.
+
+For example, if we have the message “abaa”, then we have
+:math:`p_{97} = 3/4`, :math:`p_{98} = 1/4`, and :math:`p_i = 0` for all
+other :math:`i`. Then
+
+.. math::
+
+
+       H = - \left(\frac{3}{4} \log_2 \frac{3}{4} 
+         + \frac{1}{4} \log_2 \frac{3}{4} \right) \text{bit} \approx 0.81 \text{bit}.
+
+Create file ``message_entropy.py`` and add the ``letter_freqs()``
+function from Excercise 01, Task C; you may use the code from the sample
+solution.
+
+Further add the following code:
+
+.. code:: python
+
+
+   def entropy(message):
+        pass
+
+   if __name__ == "__main__":
+       for msg in '', 'aaaa', 'aaba', 'abcd', 'This is a short text.':
+           print('{:25}: {:8.3f} bits'.format(msg, entropy(msg)))
+
+Write code for function ``entropy()`` that returns the entropy
+calculated according to the equation above.
+
+Hints
+^^^^^
+
+-  Since ``letter_freq()`` collects statistics in a dictionary, it will
+   work for all UTF-8 characters.
+-  In order to compute the entropy, do you need only values of the
+   counts dictionary (the character counts) or do you also need the
+   dictionary keys, i.e., the characters themselves?
+
+Task C
+~~~~~~
+
+`Bubble sort <http://en.wikipedia.org/wiki/Bubble_sort>`__ is a simple
+sorting algorithm that works as follows. Assume we have a list, and we
+know how to compare two list elements using “less than”. We want to sort
+the list in increasing order, so ``[4, 2, 3, 7]`` becomes
+``[2, 3, 4, 7]``. We proceed as follows (I suggest you try this with
+playing cards first to see how it works):
+
+1. Start with the first element in the list, compare it with the second.
+2. If they are in wrong order, exchange them.
+3. Now compare the second and third element and exchange them if
+   necessary.
+4. Proceed with third and fourth, fourth and fifth, etc, until you have
+   compared and, if necessary, swapped the second-last and last
+   elements.
+5. At this point, the last element in the list will be the largest
+   element in the list (why?).
+6. Now start again from the beginning of the list, but stop once you
+   reach the second-last element in the list.
+7. Then, start again from the begining of the list, but stop once you
+   reach the third-last element in the list, etc, until just the first
+   and second element are left to compare.
+
+Write code for the bubble sort function in the following code fragment
+(copy the code to your file ``bubble_sort.py``).
+
+Note: The ``bubble_sort()`` function shall **not modify** the list or
+tuple passed to it. It shall return a new list with the data in sorted
+order.
+
+.. code:: python
+
+   def bubble_sort(data):
+       pass
+
+   if __name__ == "__main__":
+
+       for data in ((),
+                    (1,),
+                    (1, 3, 8, 12),
+                    (12, 8, 3, 1),
+                    (8, 3, 12, 1)):
+           print('{!s:>15} --> {!s:>15}'.format(data, bubble_sort(data)))
+
+The program should print the data in sorted order.
