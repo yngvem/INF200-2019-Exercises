@@ -1,4 +1,143 @@
 Exersice 1
 ----------
 
-Deadline:
+
+-  For details, see `task description in the exersices
+   repo <https://github.com/yngvem/INF200-2019-Exersices/blob/master/exersices/ex01.rst>`__
+-  Deadline: **Friday 20th September, 14.00**
+-  All hand-ins in form of pull request on GitHub
+-  Make sure you use the correct repository, branch, project and file
+   names!
+-  Check that your code passes the “quality control” in PyCharm!
+
+Task A: Card deck by list comprehension
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Filename: ``deck_by_comp.py``
+
+Create file ``deck_by_comp.py`` and add the following code to it:
+
+.. code:: python
+
+   SUITS = ('C', 'S', 'H', 'D')
+   VALUES = range(1, 14)
+
+   def deck_loop():
+       deck = []
+       for suit in SUITS:
+           for val in VALUES:
+               deck.append((suit, val))
+       return deck
+
+   def deck_comp():
+       pass
+
+   if __name__ == '__main__':
+       if deck_loop() != deck_comp():
+           print('ERROR!')
+
+Then write code for the ``deck_comp()`` function that creates the same
+list as ``deck_loop()`` using a *list comprehension*, so that the script
+will run without reporting an error. A single line of code should
+suffice.
+
+Task B: From comprehension to loop
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Filename: ``comp_to_loop.py``
+
+Create file ``comp_to_loop.py``, add the following function definition
+and a main section similar to the one in Task A. Then write a function
+``squares_by_loop()`` that returns the same list as
+``squares_by_comp()``, but creates the list using a ``for``-loop.
+
+.. code:: python
+
+   def squares_by_comp(n):
+       return [k**2 for k in range(n) if k % 3 == 1]
+
+Task C: Counting letters
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Filename: ``letter_counts.py``
+
+Write code for the function ``letter_freq()`` below, so that the program
+will print the number of times each letter, digit or symbol appears in
+the string passed to ``letter_freq()``. Case should be ignored, i.e.,
+all letters counted as lowercase letters.
+
+.. code:: python
+
+   def letter_freq(txt):
+       pass
+
+   if __name__ == '__main__':
+       text = input('Please enter text to analyse: ')
+
+       frequencies = letter_freq(text)
+       for letter, count in frequencies.items():
+           print('{:3}{:10}'.format(letter, count))
+
+A run of this program could look like this:
+
+::
+
+   Please enter text to analyse: Hi, Jim!
+   !           1
+               1
+   i           2
+   h           1
+   j           1
+   m           1
+   ,           1
+
+As an extra challenge, modify the code printing the table so that
+letters are printed in alphabetical order. You can use one of Python’s
+built in sorting functions and use the ordering provided by that
+function.
+
+Task D: Clean up code
+~~~~~~~~~~~~~~~~~~~~~
+
+Filename: ``tidy_code.py``
+
+Try to understand what the Python program below does. Then copy the code
+into file ``tidy_code.py``, and make it comprehensible by changing
+variable and function names, and maybe also reorganise code.
+
+.. code:: python
+
+   from random import randint as a
+
+   __author__ = ''
+   __email__ = '@nmbu.no'
+
+
+   def b():
+       c = 0
+       while c < 1:
+           c = int(input('Your guess: '))
+       return c
+
+   def d():
+       return a(1, 6) + a(1, 6)
+
+   def e(f, g):
+       return f == g
+
+   if __name__ == '__main__':
+
+       h = False
+       i = 3
+       j = d()
+       while not h and i > 0:
+           k = b()
+           h = e(j, k)
+           if not h:
+               print('Wrong, try again!')
+               i -= 1
+
+       if i > 0:
+           print('You won {} points.'.format(i))
+       else:
+           print('You lost. Correct answer: {}.'.format(j))
