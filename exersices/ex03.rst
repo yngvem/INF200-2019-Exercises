@@ -78,7 +78,7 @@ Then write tests for the sorting algorithm in file
 ``test_sorting.py`` (place them below the code for ``bubble_sort()``),
 implementing at least the tests shown below.
 
-Run your tests by creating a run configuration for ``py.test`` in PyCharm (see [this video for how to run tests from PyCharm](https://vimeo.com/234812759)).
+Run your tests by creating a run configuration for ``pytest`` in PyCharm (I will post a video on how to run tests in PyCharm).
 
 **Note:** Do not commit the ``.idea`` and ``.cache`` directories!
 
