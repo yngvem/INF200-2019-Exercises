@@ -75,7 +75,6 @@ implementing at least the tests shown below.
 
 Run your tests by creating a run configuration for ``pytest`` in PyCharm (I will post a video on how to run tests in PyCharm).
 
-**Note:** Do not commit the ``.idea`` and ``.cache`` directories!
 
 .. code:: python
 
