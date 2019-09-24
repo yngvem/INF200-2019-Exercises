@@ -34,14 +34,14 @@ Settings/Parameters
 The programming tasks
 ---------------------
 
- 1. Exercise 03 consists of several tasks, where each task requires you
+ #. Exercise 03 consists of several tasks, where each task requires you
     to write a single Python script (``*.py`` file).
- 1. You have to make a reasonable effort on **all tasks** and achieve
+ #. You have to make a reasonable effort on **all tasks** and achieve
     reasonable solutions for at least half of the tasks.
- 1. Create a PyCharm project called ``ex03_project`` (and precisely that: no
+ #. Create a PyCharm project called ``ex03_project`` (and precisely that: no
     capitalization, no spaces, exactly ``ex03_project``).
- 1. For each task, create a file with the prescribed name in the ``ex03_project`` project.
- 1. Each Python file shall begin with the following header:
+ #. For each task, create a file with the prescribed name in the ``ex03_project`` project.
+ #. Each Python file shall begin with the following header:
 
 .. code:: python
 
@@ -53,9 +53,9 @@ The programming tasks
 
 where the ``__author__`` and ``__email__`` strings shall contain your name and email address.
     
-1. Code inspection in PyCharm (the little coloured square in the
-   top-right corner of the editor) shall show no problems, i.e., be
-   green.
+ 6. Code inspection in PyCharm (the little coloured square in the
+    top-right corner of the editor) shall show no problems, i.e., be
+    green.
 
 NOTE
 ~~~~
@@ -169,21 +169,23 @@ Correct the median function such that also failing tests pass.
 
 Proceed as follows:
 
- 1. Create file ``test_median.py`` in the ``ex03_project`` folder and place
+ #. Create file ``test_median.py`` in the ``ex03_project`` folder and place
     the code for the ``median()`` in that file. Remember to add a comment
     to the file that gives the source of the code!
- 1. Create the following tests in file ``test_median.py``:
-   1. A test that the median function returns the correct value for a one-element list.
-   1. Several tests that check that the correct median is returned for 
+ #. Create the following tests in file ``test_median.py``:
+ 
+   #. A test that the median function returns the correct value for a one-element list.
+   #. Several tests that check that the correct median is returned for 
      - lists with odd numbers of elements
      - lists with even numbers of elements
      - list with ordered, reverse-ordered and unordered elements
-   1. A test checking that requesting the median of an empty list
+   #. A test checking that requesting the median of an empty list
       raises a ``ValueError`` exception
-   1. A test that ensures that the median function leaves the original data unchanged.
-   1. A test that ensures that the median function works for tuples as well as lists
-   1. Commit your code every time you add a new test
-   1. If a test fails, check whether there is a problem with the test, or with the
-    original code. Fix the problem and commit again as soon as the
-    problem is fixed.
- 1. Repeat until all tests are implemented and pass.
+   #. A test that ensures that the median function leaves the original data unchanged.
+   #. A test that ensures that the median function works for tuples as well as lists
+   #. Commit your code every time you add a new test
+   #. If a test fails, check whether there is a problem with the test, or with the
+      original code. Fix the problem and commit again as soon as the
+      problem is fixed.
+    
+ #. Repeat until all tests are implemented and pass.
