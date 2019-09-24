@@ -174,18 +174,18 @@ Proceed as follows:
    to the file that gives the source of the code!
 #. Create the following tests in file ``test_median.py``:
 
-  #. A test that the median function returns the correct value for a one-element list.
-  #. Several tests that check that the correct median is returned for 
-    - lists with odd numbers of elements
-    - lists with even numbers of elements
-    - list with ordered, reverse-ordered and unordered elements
-  #. A test checking that requesting the median of an empty list
-     raises a ``ValueError`` exception
-  #. A test that ensures that the median function leaves the original data unchanged.
-  #. A test that ensures that the median function works for tuples as well as lists
-  #. Commit your code every time you add a new test
-  #. If a test fails, check whether there is a problem with the test, or with the
-     original code. Fix the problem and commit again as soon as the
-     problem is fixed.
+   #. A test that the median function returns the correct value for a one-element list.
+   #. Several tests that check that the correct median is returned for 
+      - lists with odd numbers of elements
+      - lists with even numbers of elements
+      - list with ordered, reverse-ordered and unordered elements
+   #. A test checking that requesting the median of an empty list
+      raises a ``ValueError`` exception
+   #. A test that ensures that the median function leaves the original data unchanged.
+   #. A test that ensures that the median function works for tuples as well as lists 
+   #. Commit your code every time you add a new test
+   #. If a test fails, check whether there is a problem with the test, or with the
+      original code. Fix the problem and commit again as soon as the
+      problem is fixed.
    
 #. Repeat until all tests are implemented and pass.
