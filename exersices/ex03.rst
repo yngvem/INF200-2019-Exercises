@@ -1,11 +1,11 @@
 Exercise 3
 ==========
 
-#. This exercise must be submitted as a pull request on Bitbucket.
+#. This exercise must be submitted as a pull request on GitHub.
 #. Start by checking out the ``master`` branch of your repository.
-#. Create branch ``ex03_branch``, **branching from the ``master`` branch**.
+#. Create branch ``ex03_branch``, **branching from the** ``master`` **branch**.
 #. Commit your work regularly, push when you like.
-#. You must create the pull request before the deadline (**Friday October 4th**) .
+#. You must create the pull request before the deadline (**Friday October 4th, 14:00**) .
 
 Use of prescribed folder and file names
 ---------------------------------------
@@ -29,7 +29,7 @@ Inspect code ...``.  To make sure that code is
 tested properly, ensure that the following settings are in place in
 Settings/Parameters
 
-- ``Editor > Code Style``: ``Right margin (columns)`` is set to ``80``
+- ``Editor > Code Style``: ``Right margin (columns)`` is set to ``79``
 - ``Editor > Inspections``: ``PEP8 coding style violation`` and ``PEP8
   naming convention violation`` are checked (and all else that is
   checked by default)
@@ -59,13 +59,6 @@ where the ``__author__`` and ``__email__`` strings shall contain your name and e
     top-right corner of the editor) shall show no problems, i.e., be
     green.
 
-NOTE
-~~~~
-
-When running ``pytest``, a folder ``.pytest_cache`` will be created in
-your ``ex03_project`` directory. **Do not commit this directory**, but
-tell SourceTree to ignore it (if you have already committed it, leave
-it in for now).
 
 Task A: Testing bubble sort
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
