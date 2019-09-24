@@ -1,8 +1,8 @@
- 1. This exercise must be submitted as a pull request on Bitbucket.
- 1. Start by checking out the ``master`` branch of your repository.
- 1. Create branch ``ex03_branch``, **branching from the ``master`` branch**.
- 1. Commit your work regularly, push when you like.
- 1. You must create the pull request before the deadline.
+#. This exercise must be submitted as a pull request on Bitbucket.
+#. Start by checking out the ``master`` branch of your repository.
+#. Create branch ``ex03_branch``, **branching from the ``master`` branch**.
+#. Commit your work regularly, push when you like.
+#. You must create the pull request before the deadline.
 
 Use of prescribed folder and file names
 ---------------------------------------
@@ -34,14 +34,14 @@ Settings/Parameters
 The programming tasks
 ---------------------
 
- #. Exercise 03 consists of several tasks, where each task requires you
-    to write a single Python script (``*.py`` file).
- #. You have to make a reasonable effort on **all tasks** and achieve
-    reasonable solutions for at least half of the tasks.
- #. Create a PyCharm project called ``ex03_project`` (and precisely that: no
-    capitalization, no spaces, exactly ``ex03_project``).
- #. For each task, create a file with the prescribed name in the ``ex03_project`` project.
- #. Each Python file shall begin with the following header:
+#. Exercise 03 consists of several tasks, where each task requires you
+   to write a single Python script (``*.py`` file).
+#. You have to make a reasonable effort on **all tasks** and achieve
+   reasonable solutions for at least half of the tasks.
+#. Create a PyCharm project called ``ex03_project`` (and precisely that: no
+   capitalization, no spaces, exactly ``ex03_project``).
+#. For each task, create a file with the prescribed name in the ``ex03_project`` project.
+#. Each Python file shall begin with the following header:
 
 .. code:: python
 
