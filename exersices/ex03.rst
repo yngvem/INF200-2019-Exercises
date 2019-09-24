@@ -48,7 +48,6 @@ The programming tasks
 
 .. code:: python
 
-        #!python
         # -*- coding: utf-8 -*-
         
         __author__ = ''
