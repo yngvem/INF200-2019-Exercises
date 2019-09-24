@@ -5,7 +5,7 @@ Exercise 3
 #. Start by checking out the ``master`` branch of your repository.
 #. Create branch ``ex03_branch``, **branching from the ``master`` branch**.
 #. Commit your work regularly, push when you like.
-#. You must create the pull request before the deadline.
+#. You must create the pull request before the deadline (**Friday October 4th**) .
 
 Use of prescribed folder and file names
 ---------------------------------------
