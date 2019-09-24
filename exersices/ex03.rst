@@ -1,3 +1,6 @@
+Exercise 3
+==========
+
 #. This exercise must be submitted as a pull request on Bitbucket.
 #. Start by checking out the ``master`` branch of your repository.
 #. Create branch ``ex03_branch``, **branching from the ``master`` branch**.
