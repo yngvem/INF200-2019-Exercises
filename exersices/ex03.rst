@@ -176,9 +176,11 @@ Proceed as follows:
 
    #. A test that the median function returns the correct value for a one-element list.
    #. Several tests that check that the correct median is returned for 
+   
       - lists with odd numbers of elements
       - lists with even numbers of elements
       - list with ordered, reverse-ordered and unordered elements
+      
    #. A test checking that requesting the median of an empty list
       raises a ``ValueError`` exception
    #. A test that ensures that the median function leaves the original data unchanged.
