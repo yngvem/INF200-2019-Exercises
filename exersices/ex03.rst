@@ -1,0 +1,187 @@
+Exercise 3
+==========
+
+#. This exercise must be submitted as a pull request on GitHub.
+#. Start by checking out the ``master`` branch of your repository.
+#. Create branch ``ex03_branch``, **branching from the** ``master`` **branch**.
+#. Commit your work regularly, push when you like.
+#. You must create the pull request before the deadline (**Friday October 4th, 14:00**) .
+
+Use of prescribed folder and file names
+---------------------------------------
+
+In order to receive credit for your work, you must use **precisely
+those file and folder names** that are prescribed in these
+instructions. Professional software projects, particularly those
+running over a long time and involving large teams, usually have
+strict internal rules on names and code formatting, so this
+requirement will train you in good professional practice. It also
+makes it much easier to review your code, so we can concentrate on
+giving you meaningful feedback on your programming, instead of
+spending time on finding out what is where.
+
+Code inspection requirements
+----------------------------
+
+To be approved, your code must pass code inspection in PyCharm 
+without any warning except spelling errors when executing ``Code >
+Inspect code ...``.  To make sure that code is
+tested properly, ensure that the following settings are in place in
+Settings/Parameters
+
+- ``Editor > Code Style``: ``Right margin (columns)`` is set to ``79``
+- ``Editor > Inspections``: ``PEP8 coding style violation`` and ``PEP8
+  naming convention violation`` are checked (and all else that is
+  checked by default)
+
+The programming tasks
+---------------------
+
+#. Exercise 03 consists of several tasks, where each task requires you
+   to write a single Python script (``*.py`` file).
+#. You have to make a reasonable effort on **all tasks** and achieve
+   reasonable solutions for at least half of the tasks.
+#. Create a PyCharm project called ``ex03_project`` (and precisely that: no
+   capitalization, no spaces, exactly ``ex03_project``).
+#. For each task, create a file with the prescribed name in the ``ex03_project`` project.
+#. Each Python file shall begin with the following header:
+
+.. code:: python
+
+        # -*- coding: utf-8 -*-
+        
+        __author__ = ''
+        __email__ = '@nmbu.no'
+
+where the ``__author__`` and ``__email__`` strings shall contain your name and email address.
+    
+6. Code inspection in PyCharm (the little coloured square in the
+    top-right corner of the editor) shall show no problems, i.e., be
+    green.
+
+
+Task A: Testing bubble sort
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+File: ``test_sorting.py``
+
+Paste your own ``bubble_sort()`` function or the one from the example
+solution for Exercise 02 into ``test_sorting.py`` in the ``ex03_project``
+folder.
+
+Then write tests for the sorting algorithm in file
+``test_sorting.py`` (place them below the code for ``bubble_sort()``),
+implementing at least the tests shown below.
+
+Run your tests by creating a run configuration for ``pytest`` in PyCharm (I will post a video on how to run tests in PyCharm).
+
+
+.. code:: python
+
+	def test_empty():
+		"""Test that the sorting function works for empty list"""
+	  pass
+
+	def test_single():
+		"""Test that the sorting function works for single-element list"""
+		pass
+
+	def test_sorted_is_not_original():
+		"""
+		Test that the sorting function returns a new object.
+
+		Consider
+
+		data = [3, 2, 1]
+		sorted_data = bubble_sort(data)
+
+		Now sorted_data shall be a different object than data,
+		not just another name for the same object.
+		"""
+		pass
+
+	def test_original_unchanged():
+		"""
+		Test that sorting leaves the original data unchanged.
+
+		Consider
+
+		data = [3, 2, 1]
+		sorted_data = bubble_sort(data)
+
+		Now data shall still contain [3, 2, 1].
+		"""
+		pass
+
+	def test_sort_sorted():
+		"""Test that sorting works on sorted data."""
+		pass
+
+	def test_sort_reversed():
+		"""Test that sorting works on reverse-sorted data."""
+		pass
+
+	def test_sort_all_equal():
+		"""Test that sorting handles data with identical elements."""
+		pass
+
+	def test_sorting():
+		"""
+		Test sorting for various test cases.
+
+		This test case should test sorting of a range of data sets and
+		ensure that they are sorted correctly. These could be lists of
+		numbers of different length or lists of strings.	
+		"""
+		pass
+
+
+Task B: Testing median function
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+File: ``test_median.py``
+
+The following function finds the median of a dataset
+
+.. code:: python
+	def median(data):
+		"""
+		Returns median of data.
+
+		:param data: An iterable of containing numbers
+		:return: Median of data
+		"""
+
+		sdata = sorted(data)
+		n = len(sdata)
+		return (sdata[n//2] if n % 2 == 1
+				else 0.5 * (sdata[n//2 - 1] + sdata[n//2]))
+
+Write tests for this function. At least one of the tests
+proposed below will fail for the current implementation.
+Correct the median function such that also failing tests pass.
+
+Proceed as follows:
+
+#. Create file ``test_median.py`` in the ``ex03_project`` folder and place
+   the code for the ``median()`` in that file. Remember to add a comment
+   to the file that gives the source of the code!
+#. Create the following tests in file ``test_median.py``:
+
+   #. A test that the median function returns the correct value for a one-element list.
+   #. Several tests that check that the correct median is returned for 
+   
+      - lists with odd numbers of elements
+      - lists with even numbers of elements
+      - list with ordered, reverse-ordered and unordered elements
+      
+   #. A test checking that requesting the median of an empty list
+      raises a ``ValueError`` exception
+   #. A test that ensures that the median function leaves the original data unchanged.
+   #. A test that ensures that the median function works for tuples as well as lists 
+   #. Commit your code every time you add a new test
+   #. If a test fails, check whether there is a problem with the test, or with the
+      original code. Fix the problem and commit again as soon as the
+      problem is fixed.
+   
+#. Repeat until all tests are implemented and pass.

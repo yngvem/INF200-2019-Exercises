@@ -85,7 +85,6 @@ Entropy is then defined as
 
 .. math::
 
-
        H = - \sum_i p_i \log_2 p_i
 
 -  Since :math:`\lim_{p\to 0+} p \log p = 0`, we define
