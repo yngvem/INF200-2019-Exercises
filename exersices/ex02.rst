@@ -1,7 +1,7 @@
 Exercise 2
 ----------
 
--  Deadline: **Friday 26th September, 14.00**
+-  Deadline: **Friday 27th September, 14.00**
 -  All hand-ins in form of pull request on GitHub
 -  Make sure you use the correct repository, branch, project and file
    names!
