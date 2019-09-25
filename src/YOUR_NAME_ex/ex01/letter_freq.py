@@ -8,17 +8,17 @@ from collections import Counter, defaultdict
 
 def letter_freq(txt):
     # Best solution
-    return Counter(txt)
+    return Counter(txt.lower())
 
     # Next best solution
     frequencies = defaultdict(int)
-    for letter in txt:
+    for letter in txt.lower():
         frequencies[letter] += 1
     return frequencies
 
     # Alternatively
     frequencies = {}
-    for letter in txt:
+    for letter in txt.lower():
         if letter not in frequencies:
             frequencies[letter] = 1
         else:
