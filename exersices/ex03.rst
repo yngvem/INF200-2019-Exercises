@@ -144,6 +144,7 @@ File: ``test_median.py``
 The following function finds the median of a dataset
 
 .. code:: python
+
     def median(data):
         """
         Returns median of data.
