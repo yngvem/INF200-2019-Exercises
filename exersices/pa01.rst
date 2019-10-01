@@ -1,0 +1,301 @@
+Working in a team
+-----------------
+
+All work on this programming assignment shall be done by a team of two
+students. Team members shall work on the assigment in a `pair
+programming <https://en.wikipedia.org/wiki/Pair_programming>`__ fashion,
+i.e., both team members shall work together on a single computer. At any
+one time, one team member is the *driver* with control of keyboard and
+mouse, while the other is the *navigator*, giving suggestions to and
+reflecting on the code with the driver. Driver and navigator switch
+roles frequently: each team member shall be driver for about half the
+time, and you should switch at least every 30 minutes.
+
+Sharing code via GitHub
+--------------------------
+
+In this exercise, you will collaborate on code by sharing code via
+GitHub.
+
+Setup
+~~~~~
+
+1. You choose the exersice repository of one teammate to work in, e.g., Pia.
+   Pia
+
+   -  creates a branch, ``pa01`` in her repository
+   -  creates the ``pa01`` folder inside the ``src`` folder.
+   -  adds an initial ``chutes.py`` file
+   -  commits that file
+   -  pushes her changes to GitHub
+   -  if Pia's repository is private, then she must add Ahmed as a 
+      colllaborator
+
+2. Pia gives her partner, Ahmed, read access to her (if it is private)
+   ``INF200_exercises`` repository.
+3. Ahmed
+
+   -  forks ``INF200_exercises`` on GitHub and renames it to
+      ``INF200_exercises_pia``
+   -  clones the fork to his computer
+   -  checks out the ``pa01``
+   -  makes changes to ``chutes.py``
+   -  commits the changes
+   -  pushes the changes to *his fork* ``INF200_PiaPytonFork`` on
+      GitHub
+
+4. Pia
+
+   -  adds Ahmed’s fork as a new remote repository in GitKraken
+      (similar to how you added the course exersice repo to pull into
+      your personal repo) and names it Ahmed.
+   -  in GitKraken, Pia right clicks on the ``pa01`` branch in the Ahmed
+      remote and selects "merge Ahmed/pa01 into pa01" in the left sidebar.
+   -  make changes to the code, commits them and pushes back to her
+      repository
+
+5. Ahmed
+
+   -  adds Pia's GitHub repository as a new remote repository in GitKraken
+      (similar to how you added the course exersice repo to pull into
+      your personal repo) and names it Pia.
+   -  in GitKraken, Pia right clicks on the ``pa01`` branch in the Ahmed
+      remote and selects "merge Pia/pa01 into pa01" in the left sidebar.
+   -  make changes to the code, commits them and pushes back to his
+      repository
+
+Work
+~~~~
+
+Ahmed and Pia regularly switch roles as *driver* (with keyboard) and
+*navigator*):
+
+-  Immediately before switching roles, the driver commits and pushes all
+   changes that haven’t been pushed yet (you can commit and push more
+   often, but you *must* do so before switching, otherwise you risk
+   merge conflicts).
+-  The new driver starts by pulling all changes from the old driver’s
+   repo and solves potential merge conflicts before continuing.
+
+Submission
+~~~~~~~~~~
+
+1. Remember to place both your names and mail addresses in the
+   ``__author__`` and ``__email__`` variables, separated by comma.
+2. Since you started working from Pia’s repo, only Pia creates a PR to
+   her ``master``.
+
+   -  Mention both names in the description of the PR.
+   -  In addition to your TA, make the programming partner a reviewer.
+   -  The programming partner approves the PR to confirm that she/he is
+      co-author and agrees with submission.
+
+**Deadline for submission: Friday, October 18, 14.00.**
+
+Note
+^^^^
+
+Remember to cite sources when using ideas or code snippets from the
+internet or books!
+
+Use of prescribed folder and file names
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In order to receive credit for your work, you must use **precisely the
+file, folder and function names** prescribed in these instructions.
+Professional software projects, particularly those running over a long
+time and involving large teams, usually have strict internal rules on
+names and code formatting, so this requirement will train you in good
+professional practice. It also makes it much easier to review your code,
+so we can concentrate on giving you meaningful feedback on your
+programming, instead of spending time on finding out what is where.
+
+Code inspection requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To be approved, your code must pass code inspection in PyCharm without
+any warning except spelling errors when executing
+To make sure that code is tested properly, ensure that the following 
+settings are in place in Settings/Parameters
+
+-  ``Editor > Code Style``: ``Right margin (columns)`` is set to ``79``
+-  ``Editor > Inspections``: ``PEP8 coding style violation`` and
+   ``PEP8 naming convention violation`` are checked (and all else that
+   is checked by default)
+
+Snakes and Ladders
+------------------
+
+In *Programming Assignment 01* you shall implement a game known as
+*Snakes and Ladders*, or as *Stigespill* in Norwegian.
+
+Introduction
+~~~~~~~~~~~~
+
+`Snakes & Ladders <https://en.wikipedia.org/wiki/Snakes_and_Ladders>`__,
+also known as Snakes & Ladders or as “Stigespillet” in Norwegian, is a
+popular childrens board game. It is played on a board of 90 enumerated
+squares, where some squares are connect by ladders and others by snakes.
+
+The rules are as follows:
+
+1. Each player has one figure, which starts at the imaginary square 0 to
+   the left of square 1.
+2. Each time it is a player’s turn, she throws a six-sided die and moves
+   her figure the given number of fields forward.
+3. If the figure stops on a field at the bottom of a ladder, the figure
+   moves immediately up the ladder.
+4. If the figure stops on a field at the top of a chute, the figure
+   moves immediately down the chute.
+5. The game ends when the first player reaches (or passes) field 90.
+
+A *move* in the game is defined as the complete process of rolling the
+die, moving forward and moving up/down a ladder/chute when necessary.
+
+This game has a number of interesting properties:
+
+-  The movement of each player is completely independent of the
+   movements of all other players as long as no player reaches field 90.
+-  Each move is completely determined by the current position of the
+   figure and the cast of the die.
+
+In particular, each move does not depend on the past moves of the figure
+in any other way than through the current position of the figure.
+Because the future depends on the past only through the present position
+of the figure, the movement of the figure is a `Markov
+process <https://en.wikipedia.org/wiki/Markov_process>`__. Markov
+processes play an important role in modeling of a large range of systems
+in biology, physics, economy etc.
+
+An interesting question is how long games last, i.e., how many moves a
+player has to make before reaching or passing field 90. The number of
+moves will vary from game to game, and we are interested in the
+probability distribution for the duration of the game. This is a
+*first-passage-time problem*, an important class of problems first
+studied by Erwin Schrödinger in 1915 (Zur Theorie der Fall- und
+Steigversuche an Teilchen mit Brownscher Bewegung. *Physikalische
+Zeitschrift* **16**:289–295, 1915).
+
+Programming Task
+~~~~~~~~~~~~~~~~
+
+Write a program that simulates Snakes & Ladders for a given number of
+players and collects data on the frequency of game durations. The user
+should be able to choose the number of players freely, from one player
+and up.
+
+The board
+^^^^^^^^^
+
+For this programming task, assume a board with 90 squares and the
+following seven snakes and seven ladders.
+
+Ladders
+'''''''
+
++--------+----+----+----+----+----+----+----+
+| From   | 1  | 8  | 36 | 43 | 49 | 65 | 68 |
++========+====+====+====+====+====+====+====+
+| **To** | 40 | 10 | 52 | 62 | 79 | 82 | 85 |
++--------+----+----+----+----+----+----+----+
+
+Snakes
+''''''
+
++--------+----+----+----+----+----+----+----+
+| From   | 24 | 33 | 42 | 56 | 64 | 74 | 87 |
++========+====+====+====+====+====+====+====+
+| **To** | 5  | 3  | 30 | 37 | 27 | 12 | 70 |
++--------+----+----+----+----+----+----+----+
+
+Requirements
+^^^^^^^^^^^^
+
+Your program shall
+
+1. have file name ``snakes_and_ladders.py``
+2. define the following functions with the given signatures and
+   semantics to play single and multiple games
+
+.. code:: python
+
+   def single_game(num_players):
+       """
+       Returns duration of single game.
+       
+       Arguments
+       ---------
+       num_players : int
+           Number of players in the game
+
+       Returns
+       -------
+       num_moves : int
+           Number of moves the winning player needed to reach the goal
+       """
+
+   def multiple_games(num_games, num_players):
+       """
+       Returns durations of a number of games.
+
+       Arguments
+       ---------
+       num_games : int
+           Number of games to play
+       num_players : int
+           Number of players in the game
+       
+       Returns
+       -------
+       num_moves : list
+           List with the numbedr of moves needed in each game.
+       """
+
+   def multi_game_experiment(num_games, num_players, seed):
+       """
+       Returns durations of a number of games when playing with given seed.
+
+       Arguments
+       ---------
+       num_games : int
+           Number of games to play
+       num_players : int
+           Number of players in the game
+       seed : int
+           Seed used to initialise the random number generator
+       
+       Returns
+       -------
+       num_moves : list
+           List with the numbedr of moves needed in each game.
+       """
+
+3. contain a ``__main__`` block that calls ``multi_game_experiment()``
+   to play 100 games with four players and an arbitrary seed, and prints
+   out
+
+   -  the shortest and longest game duration
+   -  the median game duration
+   -  the mean game duration and its standard deviation
+
+The program shall **not** request any input from the user.
+
+In addition, you shall create and submit a Jupyter notebook called
+``chutes_analysis.ipynb`` in which you simulate games with 1, 2, 4, and
+8 players and create histograms showing the distribution of game
+durations.
+
+Hints
+^^^^^
+
+-  Think first about the data structure you want to use to represent the
+   game board, i.e., ladders and chutes.
+-  Use the ``random`` module to generate random numbers.
+-  ``multi_game_experiment()`` does little else than call
+   ``multiple_games()``—which important additional step does it perform?
+   Look at the argument list!
+-  You can use ``matplotlib.pyplot.hist`` to draw histograms. Take a
+   look at the documentation for this function and think a little about
+   where you want to place borders of bins. Histograms with a large
+   number of bins often look better if you use ``histtype='step'``
+
