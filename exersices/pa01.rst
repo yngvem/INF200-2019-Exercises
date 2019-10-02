@@ -41,7 +41,7 @@ Setup
    -  checks out the ``pa01``
    -  makes changes to ``chutes.py``
    -  commits the changes
-   -  pushes the changes to *his fork* ``INF200_PiaPytonFork`` on
+   -  pushes the changes to *his fork* ``INF200_exercises_pia`` on
       GitHub
 
 4. Pia
