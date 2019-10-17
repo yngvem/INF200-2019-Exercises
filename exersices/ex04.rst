@@ -31,7 +31,7 @@ any warning except spelling errors when executing
 ``Code > Inspect code ...``. To make sure that code is tested properly,
 ensure that the following settings are in place in Settings/Parameters
 
--  ``Editor > Code Style``: ``Right margin (columns)`` is set to ``80``
+-  ``Editor > Code Style``: ``Right margin (columns)`` is set to ``79``
 -  ``Editor > Inspections``: ``PEP8 coding style violation`` and
    ``PEP8 naming convention violation`` are checked (and all else that
    is checked by default)
