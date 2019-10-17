@@ -1,0 +1,154 @@
+Exersice 04
+===========
+
+1. This exercise must be submitted as a pull request on GitHub.
+4. Create branch ``ex04``, **branching from the ``master``
+   branch**.
+5. Commit your work regularly, push when you like.
+6. When you are done, push all remaining changes to Bitbucket.
+7. Go to the ``ex04`` branch on Bitbucket, and create a pull
+   request there.
+8. Remember to add the correct TA as a reviewer.
+9. You must create the pull request before the deadline.
+
+**Deadline for submission: Monday, October 28, 14.00.**
+
+Use of prescribed folder and file names
+---------------------------------------
+
+In order to receive credit for your work, you must use **precisely those
+file and folder names** that are prescribed in these instructions.
+Professional software projects, particularly those running over a long
+time and involving large teams, usually have strict internal rules on
+names and code formatting, so this requirement will train you in good
+professional practice. It also makes it much easier to review your code,
+so we can concentrate on giving you meaningful feedback on your
+programming, instead of spending time on finding out what is where.
+
+Code inspection requirements
+----------------------------
+
+To be approved, your code must pass code inspection in PyCharm without
+any warning except spelling errors when executing
+``Code > Inspect code ...``. To make sure that code is tested properly,
+ensure that the following settings are in place in Settings/Parameters
+
+-  ``Editor > Code Style``: ``Right margin (columns)`` is set to ``80``
+-  ``Editor > Inspections``: ``PEP8 coding style violation`` and
+   ``PEP8 naming convention violation`` are checked (and all else that
+   is checked by default)
+
+The programming tasks
+---------------------
+
+1. Exercise 04 consists of several tasks, where each task requires you
+   to write a single Python script (``*.py`` file).
+2. You have to make a reasonable effort on **all tasks** and achieve
+   reasonable solutions for at least half of the tasks.
+3. Create a folder ``ex04`` in the ``src/YOUR_NAME_ex`` directory in 
+   your Exercise directory.
+4. For each task, create a file with the prescribed name in the
+   ``ex04`` folder.
+5. Each Python file shall begin with the following header:
+
+   ::
+
+       # -*- coding: utf-8 -*-
+
+       __author__ = ''
+       __email__ = '@nmbu.no'
+
+   where the ``__author__`` and ``__email__`` strings shall contain your
+   name and email address.
+
+6. Code inspection in PyCharm (the little coloured square in the
+   top-right corner of the editor) shall show no problems, i.e., be
+   green.
+
+Test for EX04
+~~~~~~~~~~~~~
+
+In the course repository, you will find a set of tests for this exercise
+in ``src/ex04/test_ex04.py``. Copy this file to your own
+``ex04`` folder and create a configuration to run it from
+PyCharm. It performs a small set of tests on your code to ensure that
+your code provides the right classes and methods with the proper number
+of arguments. It also lightly checks that the code behaves correctly.
+
+Your code should pass all tests before you submit it.
+
+Task A: Random generator classes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Filename: ``myrand.py``
+
+Implement two random number generator classes, ``LCGRand`` and
+``ListRand``. Both classes shall have a constructor (``__init__()``) and
+a method ``rand()`` that returns the next random number. ``rand()``
+should not take any arguments except ``self``.
+
+Class ``LCGRand`` shall implement a linear congruential generator (LCG),
+which generates numbers according to the following equation
+
+::
+
+   r[n+1] = a * r[n] mod m
+
+where ``a = 7**5 = 16807`` and ``m = 2**31-1``. For this class, the
+constructor takes a single argument, the seed (in addition to ``self``).
+
+The ``ListRand`` class shall be based on a list of numbers: For this
+class, the constructor takes a list of numbers, and ``rand()`` returns
+the first number from that list when it is called for the first time,
+the second number when called the second time, etc. It shall raise a
+``RuntimeError`` if ``rand()`` is called after the last number in the
+list has been delivered.
+
+The main program shall instantiate at least one generator of each class
+and print a few numbers from each.
+
+Task B: From Samfunnet to Pentagon
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Filename: ``walker.py``
+
+Simulate a student’s way home to Pentagon after a hard night at
+Samfunnet. The student is a walker in a one-dimensional world. At each
+point in time, the student is at a position ``x`` and steps to the left
+(``x-1``) or right (``x+1``) with equal probability. The students starts
+at some ``x0``, and stops when he or she arrives home at position ``h``.
+
+Create a class ``Walker`` with
+
+-  a constructor taking the initial position and the position of the
+   students home as arguments
+-  a method ``move`` to take one step
+-  a method ``is_at_home`` to check whether the student is at home
+-  a method ``get_position`` to access the students current position
+-  a method ``get_steps`` to access the number of steps the student has
+   taken in total
+
+All methods except the constructor shall only take ``self`` as argument.
+
+Use either ``random.randint()`` or ``random.uniform()`` to get the
+necessary random numbers.
+
+In the main program, run five simulations each for each of the following
+distances between initial position and home: 1, 2, 5, 10, 20, 50, 100.
+For each initial distance, print the number of steps taken by the
+walker.
+
+The program output should look like this:
+
+::
+
+   Distance:   1 -> Path lengths: [1, 1, 1, 3, 91]
+   Distance:   2 -> Path lengths: [2, 2, 4, 24, 422]
+   Distance:   5 -> Path lengths: [15, 25, 29, 33, 199]
+   Distance:  10 -> Path lengths: [38, 196, 364, 1442, 17282]
+   Distance:  20 -> Path lengths: [2630, 3830, 5100, 6112, 30522]
+   Distance:  50 -> Path lengths: [1068, 6752, 45354, 57386, 174428]
+   Distance: 100 -> Path lengths: [1936, 2104, 17868, 48264, 208788]
+
+Hint: It is probably useful to define a function that handles the
+walking process from start to home.
