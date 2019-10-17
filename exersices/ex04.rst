@@ -2,8 +2,7 @@ Exersice 04
 ===========
 
 1. This exercise must be submitted as a pull request on GitHub.
-4. Create branch ``ex04``, **branching from the ``master``
-   branch**.
+4. Create branch ``ex04``, **branching from the ``master``branch**.
 5. Commit your work regularly, push when you like.
 6. When you are done, push all remaining changes to Bitbucket.
 7. Go to the ``ex04`` branch on Bitbucket, and create a pull
