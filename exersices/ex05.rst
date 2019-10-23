@@ -1,0 +1,354 @@
+1. This exercise must be submitted as a pull request on GitHub.
+2. Start by checking out the ``master`` branch of your repository.
+3. Create branch ``ex05``, **branching from the ``master``
+branch**.
+4. Commit your work regularly, push when you like.
+5. When you are done, push all remaining changes to GitHub.
+6. Go to the ``ex05`` branch on GitHub, and create a pull
+request there.
+7. Remember to add the correct TA as a reviewer
+8. You must create the pull request before the deadline.
+
+**Deadline for submission: Monday, October 29, 14.00.**
+
+Use of prescribed folder and file names
+=======================================
+
+In order to receive credit for your work, you must use **precisely those
+file and folder names** that are prescribed in these instructions.
+Professional software projects, particularly those running over a long
+time and involving large teams, usually have strict internal rules on
+names and code formatting, so this requirement will train you in good
+professional practice. It also makes it much easier to review your code,
+so we can concentrate on giving you meaningful feedback on your
+programming, instead of spending time on finding out what is where.
+
+Code inspection requirements
+============================
+
+To be approved, your code must pass code inspection in PyCharm without
+any warning except spelling errors when executing
+``Code > Inspect code ...``. To make sure that code is tested properly,
+ensure that the following settings are in place in Settings/Parameters
+
+-  ``Editor > Code Style``: ``Right margin (columns)`` is set to ``79``
+-  ``Editor > Inspections``: ``PEP8 coding style violation`` and
+   ``PEP8 naming convention violation`` are checked (and all else that
+   is checked by default)
+
+The programming tasks
+=====================
+
+1. Exercise 05 consists of several tasks, where each task requires you
+   to write a single Python script (``*.py`` file).
+2. You have to make a reasonable effort on **all tasks** and achieve
+   reasonable solutions for at least half of the tasks.
+3. Create a PyCharm project called ``ex05`` (and precisely that: no
+   capitalization, no spaces, exactly ``ex05``).
+4. For each task, create a file with the prescribed name in the
+   ``ex05`` project.
+5. Each Python file shall begin with the following header:
+
+   ::
+
+       # -*- coding: utf-8 -*-
+
+       __author__ = ''
+       __email__ = '@nmbu.no'
+
+   where the ``__author__`` and ``__email__`` strings shall contain your
+   name and email address.
+
+6. Code inspection in PyCharm (the little coloured square in the
+   top-right corner of the editor) shall show no problems, i.e., be
+   green.
+
+Test for EX05
+-------------
+
+In the course repository, you will find a set of tests for this exercise
+in ``src/YOUR_NAME_ex/ex05/test_ex05.py``. Copy this file to your own
+``ex05`` folder and create a configuration to run it from
+PyCharm. It performs a small set of tests on your code to ensure that
+your code provides the right classes and methods with the proper number
+of arguments. It also lightly checks that the code behaves correctly.
+
+Your code should pass all tests before you submit it.
+
+Task A: Systematic walker simulations
+-------------------------------------
+
+Filename: ``walker_sim.py``
+
+Copy your ``Walker`` class from EX04 and improve upon it if necessary.
+Especially, make sure that ``Walker`` has the following methods that
+behave as described in the docstrings:
+
+::
+
+   def __init__(self, start, home):
+       """
+       :param start: initial position of the walker
+       :param home: position of the walker's home
+       """
+
+   def get_position(self):
+       """Returns current position."""
+
+   def get_steps(self):
+       """Returns number of steps taken by walker."""
+
+   def is_at_home(self):
+       """Returns True if walker is at home position."""
+
+   def move(self):
+       """
+       Change coordinate by +1 or -1 with equal probability.
+       """
+
+Note that ``move()`` only moves the walker by one position and that it
+shall not return anything.
+
+Now add a class ``Simulation`` with the following methods behaving as
+decribed in the doctrings:
+
+::
+
+   def __init__(self, start, home, seed):
+       """
+       Initialise the simulation
+
+       Arguments
+       ---------
+       start : int
+           The walker's initial position
+       home : int
+           The walk ends when the walker reaches home
+       seed : int
+           Random generator seed
+       """
+
+   def single_walk(self):
+       """
+       Simulate single walk from start to home, returning number of steps.
+
+       Returns
+       -------
+       int
+           The number of steps taken
+       """
+
+   def run_simulation(self, num_walks):
+       """
+       Run a set of walks, returns list of number of steps taken.
+
+       Arguments
+       ---------
+       num_walks : int
+           The number of walks to simulate
+
+       Returns
+       -------
+       list[int]
+           List with the number of steps per walk
+       """
+
+The main section of the script shall simulate
+
+-  20 walks from start 0 to home 10
+-  20 walks from start 10 to home 0
+-  for each of those cases simulate *twice* with seed value 12345 and
+   *once* with seed value 54321
+-  print the resulting lists (six lists in total).
+
+Task B: Walking with boundaries
+-------------------------------
+
+Filename: ``bounded_sim.py``
+
+In this task, you shall extend the ``Walker`` and ``Simulation`` classes
+to the case in which the walker is only allowed to move between
+``left_limit`` and ``right_limit``. These limits are inclusive, i.e.,
+the walker can move to those positions, but not beyond. If the random
+generator decides that the walker should move beyond a limit, the move
+is simply not executed.
+
+Your code shall import the ``Walker`` and ``Simulation`` classes from
+``walker_sim`` and subclass them to create ``BoundedWalker`` and
+``BoundedSimulation``, respectively.
+
+The constructors shall of the derived classes shall have the call
+signatures shown in the docstrings for ``BoundedWalker``
+
+::
+
+   def __init__(self, start, home, left_limit, right_limit):
+       """
+       Initialise the walker
+
+       Arguments
+       ---------
+       start : int
+           The walker's initial position
+       home : int
+           The walk ends when the walker reaches home
+       left_limit : int
+           The left boundary of walker movement
+       right_limit : int
+           The right boundary  of walker movement
+       """
+
+and for ``BoundedSimulation``
+
+::
+
+   def __init__(self, start, home, seed, left_limit, right_limit):
+       """
+       Initialise the simulation
+
+       Arguments
+       ---------
+       start : int
+           The walker's initial position
+       home : int
+           The walk ends when the walker reaches home
+       seed : int
+           Random generator seed
+       left_limit : int
+           The left boundary of walker movement
+       right_limit : int
+           The right boundary  of walker movement
+       """
+
+Try to make as much use of the methods of the respective superclass as
+possible when implementing the subclasses!
+
+The main section of the script shall simulate
+
+-  20 walks from start 0 to home 20 for each of the following left
+   boundaries: 0, -10, -100, -1000, -10000. The right boundary shall be
+   20 in all cases.
+-  Print results as left boundary followed by a list of the 20 walk
+   durations for that left boundary.
+
+Task C: Random sequences
+------------------------
+
+Filename: ``myrand.py``
+
+Copy your ``LCGRand`` class from EX04 and improve upon it if necessary.  Especially, make sure that ``LCGRand`` has the following methods: 
+::
+    class LCGRand:
+        slope = 7**5
+        congruence_class = 2**31-1
+     
+        def __init__(self, seed):
+            """
+            Initialise a linear congruence random number generator
+     
+            Arguments
+            ---------
+            seed : int
+                The initial seed for the generator
+            """
+            self._hidden_state = seed
+     
+        def rand(self):
+            """
+            Generate a single random number.
+     
+            Returns
+            -------
+            int
+                A random integer
+            """
+            self._hidden_state *= self.slope
+            self._hidden_state %= self.congruence_class
+
+            return self._hidden_state
+
+        def random_sequence(self, length):
+            return RandIter(self, length)
+
+
+Your task now is to implement a random number iterator class, ``RandIter``
+that will lazily generate random numbers.
+
+::
+    class RandIter:
+        def __init__(self, random_number_generator, length):
+            """
+
+            Arguments
+            ---------
+            random_number_generator : 
+                A random number generator with a ``rand`` method that
+                takes no arguments and returns a random number.
+            length : int
+                The number of random numbers to generate
+            """
+            self.generator = random_number_generator
+            self.length = length
+            self.num_generated_numbers = None
+
+        def __iter__(self):
+            """
+            Initialise the iterator.
+
+            Returns
+            -------
+            self : RandIter
+
+            Raises
+            ------
+            RuntimeError
+                If iter is called twice on the same RandIter object.
+            """
+            pass
+
+        def __next__(self):
+            """
+            Generate the next random number.
+
+            Returns
+            -------
+            int
+                A random number.
+
+            Raises
+            ------
+            RuntimeError
+                If the ``__next__`` method is called before ``__iter__``.
+            StopIteration
+                If ``self.length`` random numbers are generated.
+            pass
+
+Also, you should implement an ``LCGRand.infinite_random_sequence`` generator
+that generates a sequence of infinitely many random numbers.
+
+::
+    def infinite_random_sequence(self):
+        """
+        Generate an infinite sequence of random numbers.
+        
+        Yields
+        ------
+        int
+            A random number.
+        """
+        pass
+
+The following snippets illustrate the new interface of the ``LCGRand`` class.
+
+::
+    random_number_generator = LCGRand(1)
+    for rand in generator.random_sequence(10):
+        print(rand)
+
+    for i, rand in generator.infinite_random_sequence():
+        print(f'The {i}-th random number is {rand}')
+        if i > 100:
+            break
+
+    
+
