@@ -9,7 +9,7 @@ request there.
 7. Remember to add the correct TA as a reviewer
 8. You must create the pull request before the deadline.
 
-**Deadline for submission: Monday, October 29, 14.00.**
+**Deadline for submission: Monday, November 4th, 14.00.**
 
 Use of prescribed folder and file names
 =======================================
