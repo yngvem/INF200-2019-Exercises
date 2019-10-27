@@ -43,10 +43,11 @@ The programming tasks
    to write a single Python script (``*.py`` file).
 2. You have to make a reasonable effort on **all tasks** and achieve
    reasonable solutions for at least half of the tasks.
-3. Create a PyCharm project called ``ex05`` (and precisely that: no
-   capitalization, no spaces, exactly ``ex05``).
+3. Create a subfolder called ``ex05`` (and precisely that: no
+   capitalization, no spaces, exactly ``ex05``) in your
+   ``src/<your name>`` directory.
 4. For each task, create a file with the prescribed name in the
-   ``ex05`` project.
+   ``ex05`` directory.
 5. Each Python file shall begin with the following header:
 
    ::
