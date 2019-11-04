@@ -1,11 +1,9 @@
 1. This exercise must be submitted as a pull request on GitHub.
 2. Start by checking out the ``master`` branch of your repository.
-3. Create branch ``ex05``, **branching from the ``master``
-branch**.
+3. Create branch ``ex05``, **branching from the ``master`` branch**.
 4. Commit your work regularly, push when you like.
 5. When you are done, push all remaining changes to GitHub.
-6. Go to the ``ex05`` branch on GitHub, and create a pull
-request there.
+6. Go to the ``ex05`` branch on GitHub, and create a pull request there.
 7. Remember to add the correct TA as a reviewer
 8. You must create the pull request before the deadline.
 
@@ -50,8 +48,8 @@ The programming tasks
    ``ex05`` directory.
 5. Each Python file shall begin with the following header:
 
-   ::
-
+   .. code-block:: python
+   
        # -*- coding: utf-8 -*-
 
        __author__ = ''
@@ -85,7 +83,7 @@ Copy your ``Walker`` class from EX04 and improve upon it if necessary.
 Especially, make sure that ``Walker`` has the following methods that
 behave as described in the docstrings:
 
-::
+.. code-block:: python
 
    def __init__(self, start, home):
        """
@@ -113,7 +111,7 @@ shall not return anything.
 Now add a class ``Simulation`` with the following methods behaving as
 decribed in the doctrings:
 
-::
+.. code-block:: python
 
    def __init__(self, start, home, seed):
        """
@@ -181,7 +179,7 @@ Your code shall import the ``Walker`` and ``Simulation`` classes from
 The constructors shall of the derived classes shall have the call
 signatures shown in the docstrings for ``BoundedWalker``
 
-::
+.. code-block:: python
 
    def __init__(self, start, home, left_limit, right_limit):
        """
@@ -201,7 +199,7 @@ signatures shown in the docstrings for ``BoundedWalker``
 
 and for ``BoundedSimulation``
 
-::
+.. code-block:: python
 
    def __init__(self, start, home, seed, left_limit, right_limit):
        """
@@ -237,9 +235,11 @@ Task C: Random sequences
 
 Filename: ``myrand.py``
 
-Copy your ``LCGRand`` class from EX04 and improve upon it if necessary.  Especially, make sure that ``LCGRand`` has the following methods: 
-::
-    class LCGRand:
+Copy your ``LCGRand`` class from EX04 and improve upon it if necessary.  Especially, make sure that ``LCGRand`` has the following methods:
+
+.. code-block:: python
+
+   class LCGRand:
         slope = 7**5
         congruence_class = 2**31-1
      
@@ -275,7 +275,8 @@ Copy your ``LCGRand`` class from EX04 and improve upon it if necessary.  Especia
 Your task now is to implement a random number iterator class, ``RandIter``
 that will lazily generate random numbers.
 
-::
+.. code-block:: python
+
     class RandIter:
         def __init__(self, random_number_generator, length):
             """
@@ -327,7 +328,8 @@ that will lazily generate random numbers.
 Also, you should implement an ``LCGRand.infinite_random_sequence`` generator
 that generates a sequence of infinitely many random numbers.
 
-::
+.. code-block:: python
+
     def infinite_random_sequence(self):
         """
         Generate an infinite sequence of random numbers.
@@ -341,12 +343,13 @@ that generates a sequence of infinitely many random numbers.
 
 The following snippets illustrate the new interface of the ``LCGRand`` class.
 
-::
-    random_number_generator = LCGRand(1)
+.. code-block:: python
+
+    generator  = LCGRand(1)
     for rand in generator.random_sequence(10):
         print(rand)
 
-    for i, rand in generator.infinite_random_sequence():
+    for i, rand in enumerate(generator.infinite_random_sequence()):
         print(f'The {i}-th random number is {rand}')
         if i > 100:
             break
