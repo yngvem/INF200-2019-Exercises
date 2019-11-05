@@ -1,0 +1,291 @@
+Working in a team
+=================
+
+All work on this programming assignment shall be done by a team of two
+students. 
+
+**Exceptions must be approved in advance. Submissions not developed in a
+team without prior explicit approval by Plesser will not be accepted.**
+
+Team members shall work on the assigment in a `pair
+programming <https://en.wikipedia.org/wiki/Pair_programming>`__ fashion,
+i.e., both team members shall work together on a single computer. At any
+one time, one team member is the *driver* with control of keyboard and
+mouse, while the other is the *navigator*, giving suggestions to and
+reflecting on the code with the driver. Driver and navigator switch
+roles frequently: each team member shall be driver for about half the
+time, and you should switch at least every 30 minutes.
+
+Sharing code via Bitbucket
+==========================
+
+In this exercise, you will collaborate the same way as with PA01.
+
+Setup
+~~~~~
+
+1. You choose the exersice repository of one teammate to work in, e.g., Pia.
+   Pia
+
+   -  creates a branch, ``pa02`` in her repository
+   -  creates the ``pa02`` folder inside the ``src`` folder.
+   -  adds an initial ``snakes.py`` file
+   -  commits that file
+   -  pushes her changes to GitHub
+   -  if Pia's repository is private, then she must add Ahmed as a 
+      colllaborator
+
+2. Pia gives her partner, Ahmed, read access to her (if it is private)
+   ``INF200_exercises`` repository.
+3. Ahmed
+
+   -  forks ``INF200_exercises`` on GitHub and renames it to
+      ``INF200_exercises_pia``
+   -  clones the fork to his computer
+   -  checks out the ``pa02``
+   -  makes changes to ``snakes.py``
+   -  commits the changes
+   -  pushes the changes to *his fork* ``INF200_exercises_pia`` on
+      GitHub
+
+4. Pia
+
+   -  adds Ahmed’s fork as a new remote repository in GitKraken
+      (similar to how you added the course exersice repo to pull into
+      your personal repo) and names it Ahmed.
+   -  in GitKraken, Pia right clicks on the ``pa02`` branch in the Ahmed
+      remote and selects "merge Ahmed/pa02 into pa02" in the left sidebar.
+   -  make changes to the code, commits them and pushes back to her
+      repository
+
+5. Ahmed
+
+   -  adds Pia's GitHub repository as a new remote repository in GitKraken
+      (similar to how you added the course exersice repo to pull into
+      your personal repo) and names it Pia.
+   -  in GitKraken, Pia right clicks on the ``pa02`` branch in the Ahmed
+      remote and selects "merge Pia/pa02 into pa02" in the left sidebar.
+   -  make changes to the code, commits them and pushes back to his
+      repository
+
+Work
+~~~~
+
+Ahmed and Pia regularly switch roles as *driver* (with keyboard) and
+*navigator*):
+
+-  Immediately before switching roles, the driver commits and pushes all
+   changes that haven’t been pushed yet (you can commit and push more
+   often, but you *must* do so before switching, otherwise you risk
+   merge conflicts).
+-  The new driver starts by pulling all changes from the old driver’s
+   repo and solves potential merge conflicts before continuing.
+
+Submission
+~~~~~~~~~~
+
+1. Remember to place both your names and mail addresses in the
+   ``__author__`` and ``__email__`` variables, separated by comma.
+2. Since you started working from Pia’s repo, only Pia creates a PR to
+   her ``master``.
+
+   -  Mention both names in the description of the PR.
+   -  In addition to your TA, make the programming partner a reviewer.
+   -  The programming partner approves the PR to confirm that she/he is
+      co-author and agrees with submission.
+
+**Deadline for submission: Friday, November 22nd, 14.00.**
+
+Note
+~~~~
+
+Remember to cite sources when using ideas or code snippets from the
+internet or books!
+
+Use of prescribed folder and file names
+---------------------------------------
+
+In order to receive credit for your work, you must use **precisely the
+file, folder, class and method names** prescribed in these instructions.
+Professional software projects, particularly those running over a long
+time and involving large teams, usually have strict internal rules on
+names and code formatting, so this requirement will train you in good
+professional practice. It also makes it much easier to review your code,
+so we can concentrate on giving you meaningful feedback on your
+programming, instead of spending time on finding out what is where.
+
+Code inspection requirements
+----------------------------
+
+To be approved, your code must pass code inspection in PyCharm without
+any warning except spelling errors when executing
+``Code > Inspect code ...`` on directory ``pa02``. To make sure
+that code is tested properly, ensure that the following settings are in
+place in Settings/Parameters
+
+-  ``Editor > Code Style``: ``Right margin (columns)`` is set to ``79``
+-  ``Editor > Inspections``: ``PEP8 coding style violation`` and
+   ``PEP8 naming convention violation`` are checked (and all else that
+   is checked by default)
+
+The task
+========
+
+In *Programming Assignment 02*, you shall develop an object-oriented
+implementation of a Snakes & Ladders simulator. Build on your
+experiences from PA02, EX04, and EX05. At the same time, you shall
+practice test-driven development.
+
+In ``Exercises/pa02`` you will find ``test_base_pa02.py``, which
+contains a basic set of tests prescribing the interface of the classes
+you shall write. Copy the file to your own ``pa02`` directory
+and create a configuration to run it from PyCharm.
+
+Then create ``snakes_simulations.py`` and add the minimal code necessary
+to make all tests in ``test_base_pa02.py`` pass. To do so, you can
+implement methods as stubs first, i.e., methods that do nothing, do as
+little as at all possible, return fixed values, etc.
+
+Once all tests in ``test_base_pa02.py`` pass, create ``test_pa02.py``
+and add some tests of your own. These tests should check that methods
+actually do the right thing.
+
+Then improve your simulation code to make the new tests pass before you
+write more tests. You should commit tests before writing new simulation
+code, and commit new simulation code before you write new tests.
+Remember to switch roles regularly!
+
+Tests including randomness
+--------------------------
+
+Writing tests for programs including random numbers can be difficult,
+because program runs will produce different results for different seeds.
+If we know the expected probability distribution of results, we can
+apply statistical tests to check if the program produces results
+consistent with the expected distribution. Alternatively, we could
+manipulate the random number generator produce numbers we know and then
+see if the program behaves as expected. These are advanced techniques
+and you are not expected to use them in this assignment.
+
+We can still create some basic checks. For example, when calling
+``move()`` on a player, her position must change. Also, the position
+cannot be smaller than 1 (after the first move), and can never be the
+starting point of a chute or ladder.
+
+In order to test some of the methods that return data about simulation
+results, you may set the simulation result list (see below) to some
+value and then check that you get the correct summary data back.
+
+Classes and methods
+-------------------
+
+The text below provides a brief description of the classes you are to
+create and the methods these classes shall implement. You are allowed to
+add additional methods. The description of classes is mostly in text
+form, ``test_base_pa02.py`` specifies the detailed call signatures. You
+shall write docstrings for classes and methods yourself.
+
+``Board`` class
+---------------
+
+The ``Board`` class shall manage all information about ladders, snakes,
+and the goal.
+
+1. If no parameters are given to the ``Board`` constructor, it shall
+   create a standard board, with the snakes, ladders, and goal as in
+   PA01.
+2. Method ``goal_reached()`` shall return true if it is passed a
+   position at or beyond the goal.
+3. Method ``position_adjustment()`` shall handle changes in position due
+   to snakes and ladders. It accepts a position as argument and returns
+   the number of positions the player must move forward (in case of a
+   ladder) or backward (chute), to get to the correct position. If the
+   player is not at the start of a chute or ladder, the method returns
+   0.
+
+``Player`` class
+----------------
+
+The ``Player`` class and its subclasses manage information about player
+position, including information on which board a player “lives”. 1. The
+player constructor must receive the board as argument:
+
+.. code:: python
+
+           board = Board()
+           player = Player(board)
+
+1. The ``move()`` method moves the player by implementing a die cast,
+   the following move and, if necessary, a move up a ladder or down a
+   chute. It does not return anything.
+
+``ResilientPlayer`` class
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This is a subclass of ``Player`` with slightly different moving
+behavior: When a resilient player slips down a chute, he will take extra
+steps in the next move, in addition to the roll of the die. The number
+of extra steps is provided as an argument to the constructor, default is
+1. Extra steps are taken immediately after the steps prescribed by the
+die and before snakes and ladders are checked.
+
+``LazyPlayer`` class
+~~~~~~~~~~~~~~~~~~~~
+
+This is a subclass of ``Player`` as well. After climbing a ladder, a
+lazy player drops a given number of steps. The number of dropped steps
+is an optional argument to the constructor, default is 1. The player
+never moves backward: if, e.g., the die cast results in 1 step and the
+player is to drop 3 steps, the player does not move -2 steps but just
+stays in place.
+
+``Simulation`` class
+--------------------
+
+The ``Simulation`` class manages an entire simulation.
+
+In addition to the board, the ``Simulation`` constructor receives - a
+random seed to seed the random number generator; - a boolean flag
+indicating whether the order or players should be randomized before the
+start of each game played; - a list of player *classes*: for each game,
+a list of player objects will be created, one player for each entry in
+the list.
+
+The example below shows a constructor call for simulations on the
+default board in which two players, three resilient players and one lazy
+player compete with each other, using a different starting order in each
+game:
+
+.. code:: python
+
+   sim = Simulation([Player, Player, ResilientPlayer, ResilientPlayer,
+                     ResilientPlayer, LazyPlayer],
+                     randomize_players=True)
+
+The class has the following methods:
+
+1. ``single_game()`` runs a single game returning a tuple consisting of
+   the number of moves made and the type of the winner, e.g.
+   ``(25, 'LazyPlayer')``.
+2. ``run_simulation()`` runs a given number of games and stores the
+   results in the ``Simulation`` object. It returns nothing.
+3. ``get_results()`` returns all results generated by
+   ``run_simulation()`` calls so far as a list of result tuples, e.g.,
+   ``[(10, 'Player'), (6, 'ResilientPlayer')]``.
+4. ``winners_per_type()`` returns a dictionary mapping player types to
+   the number of wins, e.g.,
+   ``{'Player': 4, 'LazyPlayer': 2, 'ResilientPlayer': 5}``
+5. ``durations_per_type()`` returns a dictionary mapping player types to
+   lists of game durations for that type, e.g.,
+   ``{'Player': [11, 25, 13], 'LazyPlayer': [39], 'ResilientPlayer': [8, 7, 6, 11]}``
+6. ``players_per_type`` returns a dictionary showing how many players of
+   each type participate, e.g.,
+   ``{'Player': 3, 'LazyPlayer': 1, 'ResilientPlayer': 0}``
+
+Retrieving class names
+~~~~~~~~~~~~~~~~~~~~~~
+
+For a class ``C``, ``C.__name__`` will return the class name as string
+``'C'``. If ``c`` is an instance of class ``C``, then ``type(c)`` will
+return the class and ``type(c).__name__`` will provide the class name as
+string ``'C'``.
