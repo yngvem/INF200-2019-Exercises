@@ -64,33 +64,23 @@ Setup
    -  make changes to the code, commits them and pushes back to his
       repository
 
-Work
+Note
 ~~~~
 
-Ahmed and Pia regularly switch roles as *driver* (with keyboard) and
-*navigator*):
+Remember to cite sources when using ideas or code snippets from the
+internet or books!
 
--  Immediately before switching roles, the driver commits and pushes all
-   changes that haven’t been pushed yet (you can commit and push more
-   often, but you *must* do so before switching, otherwise you risk
-   merge conflicts).
--  The new driver starts by pulling all changes from the old driver’s
-   repo and solves potential merge conflicts before continuing.
+Use of prescribed folder and file names
+---------------------------------------
 
-Submission
-~~~~~~~~~~
-
-1. Remember to place both your names and mail addresses in the
-   ``__author__`` and ``__email__`` variables, separated by comma.
-2. Since you started working from Pia’s repo, only Pia creates a PR to
-   her ``master``.
-
-   -  Mention both names in the description of the PR.
-   -  In addition to your TA, make the programming partner a reviewer.
-   -  The programming partner approves the PR to confirm that she/he is
-      co-author and agrees with submission.
-
-**Deadline for submission: Tuesday, October 22nd, 14.00.**
+In order to receive credit for your work, you must use **precisely the
+file, folder, class and method names** prescribed in these instructions.
+Professional software projects, particularly those running over a long
+time and involving large teams, usually have strict internal rules on
+names and code formatting, so this requirement will train you in good
+professional practice. It also makes it much easier to review your code,
+so we can concentrate on giving you meaningful feedback on your
+programming, instead of spending time on finding out what is where.
 
 Note
 ^^^^
