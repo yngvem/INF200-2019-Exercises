@@ -2,12 +2,7 @@ Working in a team
 =================
 
 All work on this programming assignment shall be done by a team of two
-students. 
-
-**Exceptions must be approved in advance. Submissions not developed in a
-team without prior explicit approval by Plesser will not be accepted.**
-
-Team members shall work on the assigment in a `pair
+students. Team members shall work on the assigment in a `pair
 programming <https://en.wikipedia.org/wiki/Pair_programming>`__ fashion,
 i.e., both team members shall work together on a single computer. At any
 one time, one team member is the *driver* with control of keyboard and
