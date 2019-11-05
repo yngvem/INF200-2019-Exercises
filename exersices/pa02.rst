@@ -96,24 +96,20 @@ Submission
 
 **Deadline for submission: Friday, November 22nd, 14.00.**
 
-Note
-~~~~
 
-Remember to cite sources when using ideas or code snippets from the
-internet or books!
+Code inspection requirements
+----------------------------
 
-Use of prescribed folder and file names
----------------------------------------
+To be approved, your code must pass code inspection in PyCharm without
+any warning except spelling errors when executing
+``Code > Inspect code ...`` on directory ``pa02``. To make sure
+that code is tested properly, ensure that the following settings are in
+place in Settings/Parameters
 
-In order to receive credit for your work, you must use **precisely the
-file, folder, class and method names** prescribed in these instructions.
-Professional software projects, particularly those running over a long
-time and involving large teams, usually have strict internal rules on
-names and code formatting, so this requirement will train you in good
-professional practice. It also makes it much easier to review your code,
-so we can concentrate on giving you meaningful feedback on your
-programming, instead of spending time on finding out what is where.
-
+-  ``Editor > Code Style``: ``Right margin (columns)`` is set to ``79``
+-  ``Editor > Inspections``: ``PEP8 coding style violation`` and
+   ``PEP8 naming convention violation`` are checked (and all else that
+   is checked by default)
 
 The task
 ========
