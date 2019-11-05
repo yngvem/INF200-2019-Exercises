@@ -262,6 +262,7 @@ game:
                      ResilientPlayer, LazyPlayer],
                      randomize_players=True)
 
+
 The class has the following methods:
 
 1. ``single_game()`` runs a single game returning a tuple consisting of
