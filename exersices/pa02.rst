@@ -16,8 +16,8 @@ reflecting on the code with the driver. Driver and navigator switch
 roles frequently: each team member shall be driver for about half the
 time, and you should switch at least every 30 minutes.
 
-Sharing code via Bitbucket
-==========================
+Sharing code via GitHub
+=======================
 
 In this exercise, you will collaborate the same way as with PA01.
 
