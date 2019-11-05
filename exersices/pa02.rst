@@ -114,19 +114,6 @@ professional practice. It also makes it much easier to review your code,
 so we can concentrate on giving you meaningful feedback on your
 programming, instead of spending time on finding out what is where.
 
-Code inspection requirements
-----------------------------
-
-To be approved, your code must pass code inspection in PyCharm without
-any warning except spelling errors when executing
-``Code > Inspect code ...`` on directory ``pa02``. To make sure
-that code is tested properly, ensure that the following settings are in
-place in Settings/Parameters
-
--  ``Editor > Code Style``: ``Right margin (columns)`` is set to ``79``
--  ``Editor > Inspections``: ``PEP8 coding style violation`` and
-   ``PEP8 naming convention violation`` are checked (and all else that
-   is checked by default)
 
 The task
 ========
