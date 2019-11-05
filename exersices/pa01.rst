@@ -63,6 +63,36 @@ Setup
       remote and selects "merge Pia/pa01 into pa01" in the left sidebar.
    -  make changes to the code, commits them and pushes back to his
       repository
+Work
+~~~~
+
+Ahmed and Pia regularly switch roles as *driver* (with keyboard) and
+*navigator*):
+
+-  Immediately before switching roles, the driver commits and pushes all
+   changes that haven’t been pushed yet (you can commit and push more
+   often, but you *must* do so before switching, otherwise you risk
+   merge conflicts).
+-  The new driver starts by pulling all changes from the old driver’s
+   repo and solves potential merge conflicts before continuing.
+
+Submission
+~~~~~~~~~~
+
+1. Remember to place both your names and mail addresses in the
+   ``__author__`` and ``__email__`` variables, separated by comma.
+2. Since you started working from Pia’s repo, only Pia creates a PR to
+   her ``master``.
+
+   -  Mention both names in the description of the PR.
+   -  In addition to your TA, make the programming partner a reviewer.
+   -  The programming partner approves the PR to confirm that she/he is
+      co-author and agrees with submission.
+
+**Deadline for submission: Tuesday, October 22nd, 14.00.**
+
+Note
+~~~~
 
 
 Introduction
