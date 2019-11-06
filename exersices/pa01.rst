@@ -63,7 +63,6 @@ Setup
       remote and selects "merge Pia/pa01 into pa01" in the left sidebar.
    -  make changes to the code, commits them and pushes back to his
       repository
-
 Work
 ~~~~
 
@@ -93,7 +92,25 @@ Submission
 **Deadline for submission: Tuesday, October 22nd, 14.00.**
 
 Note
-^^^^
+~~~~
+
+Remember to cite sources when using ideas or code snippets from the
+internet or books!
+
+Use of prescribed folder and file names
+---------------------------------------
+
+In order to receive credit for your work, you must use **precisely the
+file, folder, class and method names** prescribed in these instructions.
+Professional software projects, particularly those running over a long
+time and involving large teams, usually have strict internal rules on
+names and code formatting, so this requirement will train you in good
+professional practice. It also makes it much easier to review your code,
+so we can concentrate on giving you meaningful feedback on your
+programming, instead of spending time on finding out what is where.
+
+Note
+~~~~
 
 Remember to cite sources when using ideas or code snippets from the
 internet or books!
