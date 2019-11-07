@@ -22,7 +22,7 @@ Sharing code via GitHub
 In this exercise, you will collaborate the same way as with PA01.
 
 Setup
-~~~~~
+-----
 
 1. You choose the exersice repository of one teammate to work in, e.g., Pia.
    Pia
@@ -69,7 +69,7 @@ Setup
       repository
 
 Work
-~~~~
+----
 
 Ahmed and Pia regularly switch roles as *driver* (with keyboard) and
 *navigator*):
@@ -82,7 +82,7 @@ Ahmed and Pia regularly switch roles as *driver* (with keyboard) and
    repo and solves potential merge conflicts before continuing.
 
 Submission
-~~~~~~~~~~
+----------
 
 1. Remember to place both your names and mail addresses in the
    ``__author__`` and ``__email__`` variables, separated by comma.
@@ -135,7 +135,7 @@ actually do the right thing.
 
 Then improve your simulation code to make the new tests pass before you
 write more tests. You should commit tests before writing new simulation
-code, and commit new simulation code before you write new tests.
+code, and commit new simulation code before you write new tests. 
 Remember to switch roles regularly!
 
 Tests including randomness
