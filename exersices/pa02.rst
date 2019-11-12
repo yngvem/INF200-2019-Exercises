@@ -124,7 +124,7 @@ contains a basic set of tests prescribing the interface of the classes
 you shall write. Copy the file to your own ``pa02`` directory
 and create a configuration to run it from PyCharm.
 
-Then create ``snakes_simulations.py`` and add the minimal code necessary
+Then create ``chutes_simulation.py`` and add the minimal code necessary
 to make all tests in ``test_base_pa02.py`` pass. To do so, you can
 implement methods as stubs first, i.e., methods that do nothing, do as
 little as at all possible, return fixed values, etc.
