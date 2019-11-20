@@ -48,7 +48,7 @@ def test_logistic_gradient(coef, X, y):
     p = lr.predict_proba(coef, X)
     assert np.linalg.norm(lr.logistic_gradient(coef, X, p)) < 1e-8
 
-    assert np.linalg.norm(lr.logistic_gradient([1, 100], X, y)) > 1
+    assert np.linalg.norm(lr.logistic_gradient(np.array([1, 100]), X, y)) > 1
 
     gradient_norm = np.linalg.norm(lr.logistic_gradient(coef, X, y))
     assert abs(gradient_norm - 0.7071067811865) < 1e-8
