@@ -15,6 +15,42 @@ If you do not understand the following mathematics, that is ok. You are
 can solve the solution by looking at the lecture notes for lecture 10
 and asking your TA or peers for help.
 
+The functions you should implement
+----------------------------------
+
+For this coursework, you must implement the functions required to compute the
+gradient and the gradient descent algorithm. Specifically, you should
+implement the following five functions.
+
+  * ``sigmoid(z)``
+  * ``predict_proba(w, X)``
+  * ``logistic_gradient(w, X, y)``
+  * ``LogisticRegression.__init__(self, max_iter=1000, tol=1e-5, learning_rate=0.01, random_state=None)``
+  * ``LogisticRegression._fit_gradient_descent(self, coef, X, y)``
+  * ``LogisticRegression._has_converged(self, coef, X, y)``
+
+Read the docstring of these functions to understand how you should create
+them.
+
+Also, in the ``__main__`` block, you should add two lines to create and
+fit a logistic regression model to some simulated data.
+
+Note that for the source code, we use the name ``coef`` and ``coef_`` for 
+the regression coefficients, whereas we use the name :math:`w` for
+mathematical expression. This is to follow the standard set by scikit-learn.
+
+Tips for your code
+------------------
+
+ * No function should be larger than 5 lines.
+ * You don't need any other imported functions than ``numpy.exp`` and
+   ``numpy.linalg.norm``.
+ * You will need matrix multiplication (the ``@`` operator).
+ * You shoul to use broadcasting (``x[:, np.newaxis]``), although the problem
+   can be solved without it.
+ * Look at the attributes field of the ``LogisticRegression`` docstring
+   to see which attributes you should assign in the ``__init__`` method.
+
 Some theoretical background
 ---------------------------
 
@@ -107,42 +143,6 @@ is given by
 .. math::
 
     \nabla_w C(\mathbf{w}; \mathbf{X}, \mathbf{y}) = \sum_i \mathbf{x}_i (y_i - \hat{y}_i).
-
-The functions you should implement
-----------------------------------
-
-For this coursework, you must implement the functions required to compute the
-gradient and the gradient descent algorithm. Specifically, you should
-implement the following five functions.
-
-  * ``sigmoid(z)``
-  * ``predict_proba(w, X)``
-  * ``logistic_gradient(w, X, y)``
-  * ``LogisticRegression.__init__(self, max_iter=1000, tol=1e-5, learning_rate=0.01, random_state=None)``
-  * ``LogisticRegression._fit_gradient_descent(self, coef, X, y)``
-  * ``LogisticRegression._has_converged(self, coef, X, y)``
-
-Read the docstring of these functions to understand how you should create
-them.
-
-Also, in the ``__main__`` block, you should add two lines to create and
-fit a logistic regression model to some simulated data.
-
-Note that for the source code, we use the name ``coef`` and ``coef_`` for 
-the regression coefficients, whereas we use the name :math:`w` for
-mathematical expression. This is to follow the standard set by scikit-learn.
-
-Tips for your code
-------------------
-
- * No function should be larger than 5 lines.
- * You don't need any other imported functions than ``numpy.exp`` and
-   ``numpy.linalg.norm``.
- * You will need matrix multiplication (the ``@`` operator).
- * You shoul to use broadcasting (``x[:, np.newaxis]``), although the problem
-   can be solved without it.
- * Look at the attributes field of the ``LogisticRegression`` docstring
-   to see which attributes you should assign in the ``__init__`` method.
 
 Final note
 ----------
