@@ -104,3 +104,9 @@ class TestLogisticRegression:
             lr_model = lr.LogisticRegression(max_iter=5)
             lr_model.fit(X, y)
             assert lr.logistic_gradient.call_count >= 5
+
+    def test_has_converged(self, coef, X):
+        lr_model = lr.LogisticRegression()
+        p = lr.predict_proba(coef, X)
+        assert lr_model._has_converged(coef, X, p)
+        assert not lr_model._has_converged(np.array([1, 1000]), X, p)
