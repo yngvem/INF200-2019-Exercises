@@ -1,0 +1,86 @@
+1. This exercise must be submitted as a pull request on GitHub.
+2. Start by checking out the ``master`` branch of your repository.
+3. Create branch ``ex06``, **branching from the ``master`` branch**.
+4. Commit your work regularly, push when you like.
+5. When you are done, push all remaining changes to GitHub.
+6. Go to the ``ex06`` branch on GitHub, and create a pull request there.
+7. Remember to add the correct TA as a reviewer
+8. You must create the pull request before the deadline.
+
+**Deadline for submission: Tuesday, November 26th, 14.00.**
+
+Use of prescribed folder and file names
+=======================================
+
+In order to receive credit for your work, you must use **precisely those
+file and folder names** that are prescribed in these instructions.
+Professional software projects, particularly those running over a long
+time and involving large teams, usually have strict internal rules on
+names and code formatting, so this requirement will train you in good
+professional practice. It also makes it much easier to review your code,
+so we can concentrate on giving you meaningful feedback on your
+programming, instead of spending time on finding out what is where.
+
+Code inspection requirements
+============================
+
+To be approved, your code must pass code inspection in PyCharm without
+any warning except spelling errors when executing
+``Code > Inspect code ...``. To make sure that code is tested properly,
+ensure that the following settings are in place in Settings/Parameters
+
+-  ``Editor > Code Style``: ``Right margin (columns)`` is set to ``79``
+-  ``Editor > Inspections``: ``PEP8 coding style violation`` and
+   ``PEP8 naming convention violation`` are checked (and all else that
+   is checked by default)
+
+The programming tasks
+=====================
+
+1. Exercise 06 consists of several tasks, where each task requires you
+   to write a single Python script (``*.py`` file).
+2. You have to make a reasonable effort on **all tasks** and achieve
+   reasonable solutions for at least half of the tasks.
+3. Create a subfolder called ``ex06`` (and precisely that: no
+   capitalization, no spaces, exactly ``ex06``) in your
+   ``src/<your name>`` directory.
+4. For each task, create a file with the prescribed name in the
+   ``ex06`` directory.
+5. Each Python file shall begin with the following header:
+
+   .. code-block:: python
+   
+       # -*- coding: utf-8 -*-
+
+       __author__ = ''
+       __email__ = '@nmbu.no'
+
+   where the ``__author__`` and ``__email__`` strings shall contain your
+   name and email address.
+
+6. Code inspection in PyCharm (the little coloured square in the
+   top-right corner of the editor) shall show no problems, i.e., be
+   green.
+
+Test for EX06
+-------------
+
+In the course repository, you will find a set of tests for this exercise
+in ``src/YOUR_NAME_ex/ex06/test_logistic_regression.py`` and a code skeleton
+in ``src/YOUR_NAME_ex/ex06/logistic_regression.py``. Copy these files to your
+own ``ex06`` folder and create a configuration to run it from
+PyCharm. It performs a small set of tests on your code to ensure that
+your code provides the right classes and methods with the proper number
+of arguments. It also lightly checks that the code behaves correctly.
+
+Your code should pass all tests before you submit it.
+
+Problem statement
+-----------------
+
+The problem statement contains mathematical symbols that are not easily 
+typeset og GitHub. I therefore generated the problem text directly from
+the docstrings in the code skeleton, using a tool named Sphinx (which
+you will use in January/June).
+
+The problem statement is available here: https://inf200-coursework.readthedocs.io/en/latest/
