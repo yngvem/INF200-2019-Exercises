@@ -11,8 +11,8 @@ pairs of measurements, :math:`\mathbf{x}_i` and target values :math:`y_i`.
 
 Disclaimer:
 ~~~~~~~~~~~
-If you do not understand the following mathematics, that is ok. You are
-can solve the solution by looking at the lecture notes for lecture 10
+If you do not understand the following mathematics, that is ok. You
+can solve the problems by looking at the lecture notes for lecture 10
 and asking your TA or peers for help.
 
 The functions you should implement
@@ -20,7 +20,7 @@ The functions you should implement
 
 For this coursework, you must implement the functions required to compute the
 gradient and the gradient descent algorithm. Specifically, you should
-implement the following five functions.
+implement the following five functions:
 
   * ``sigmoid(z)``
   * ``predict_proba(w, X)``
@@ -46,7 +46,7 @@ Tips for your code
  * You don't need any other imported functions than ``numpy.exp`` and
    ``numpy.linalg.norm``.
  * You will need matrix multiplication (the ``@`` operator).
- * You shoul to use broadcasting (``x[:, np.newaxis]``), although the problem
+ * You should use broadcasting (``x[:, np.newaxis]``), although the problem
    can be solved without it.
  * Look at the attributes field of the ``LogisticRegression`` docstring
    to see which attributes you should assign in the ``__init__`` method.
@@ -373,7 +373,7 @@ class LogisticRegression(BaseEstimator, ClassifierMixin):
         the loss function at iteration k-1.
 
         The iterative algorithm should be performed for at most
-        ``self.max_iter`` iterations, or untill the convergence criteria is
+        ``self.max_iter`` iterations, or until the convergence criteria is
         reached.
 
         Parameters
