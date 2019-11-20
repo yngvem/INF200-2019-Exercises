@@ -154,6 +154,9 @@ leading underscore is a way to tell other developers that this method is not
 relevant unless you are actively modifying or inheriting from the class. If
 you simply use instances of a class, then you shouldn't worry about (or use)
 them.
+
+Code
+----
 """
 
 
