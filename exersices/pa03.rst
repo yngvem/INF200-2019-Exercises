@@ -1,0 +1,4 @@
+I looked at last year's PA03, and found that it was not relevant to this year's lectures. 
+Instead of spending several days making a new PA03 that only 1-5 groups will hand in (based
+on previous years data), I decided to give you two chances at PA02 instead. If you failed PA02,
+then you may resubmit it a week after you get feedback from your TA.
